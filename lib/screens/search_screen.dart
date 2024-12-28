@@ -105,7 +105,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         if (snapshot.hasData) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return Center(child: CircularProgressIndicator());
+                            return const Center(child: CircularProgressIndicator());
                           }
                           if (snapshot.hasError) {
                             return Center(
@@ -113,31 +113,31 @@ class _SearchScreenState extends State<SearchScreen> {
                           }
                           if (!snapshot.hasData ||
                               snapshot.data!.results.isEmpty) {
-                            return Center(child: Text('No data available'));
+                            return const Center(child: Text('No data available'));
                           }
 
                           var data = snapshot.data!.results;
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 30,
                               ),
-                              Text(
+                              const Text(
                                 "Top Searches",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               ListView.builder(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 itemCount: data.length,
                                 scrollDirection: Axis.vertical,
                                 shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
+                                physics: const NeverScrollableScrollPhysics(),
                                 itemBuilder: (context, index) {
                                   return InkWell(
                                     onTap: () {
@@ -153,15 +153,15 @@ class _SearchScreenState extends State<SearchScreen> {
                                     },
                                     child: Container(
                                       height: 150,
-                                      padding: EdgeInsets.all(5),
+                                      padding: const EdgeInsets.all(5),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                       child: Row(
                                         children: [
                                           Image.network(
-                                              "${imageUrl}${data[index].posterPath}"),
-                                          SizedBox(
+                                              "$imageUrl${data[index].posterPath}"),
+                                          const SizedBox(
                                             width: 20,
                                           ),
                                           SizedBox(
@@ -180,17 +180,17 @@ class _SearchScreenState extends State<SearchScreen> {
                             ],
                           );
                         } else {
-                          return SizedBox.shrink();
+                          return const SizedBox.shrink();
                         }
                       })
                   : searchModel == null
-                      ? SizedBox.shrink()
+                      ? const SizedBox.shrink()
                       : GridView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: searchModel?.results.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 3,
                                   mainAxisSpacing: 15,
                                   crossAxisSpacing: 5,
@@ -217,16 +217,16 @@ class _SearchScreenState extends State<SearchScreen> {
                                         )
                                       : CachedNetworkImage(
                                           imageUrl:
-                                              "${imageUrl}${searchModel!.results[index].backdropPath}",
+                                              "$imageUrl${searchModel!.results[index].backdropPath}",
                                           height: 170,
                                         ),
                                   SizedBox(
                                     width: 100,
                                     child: Text(
-                                      "${searchModel!.results[index].originalTitle}",
+                                      searchModel!.results[index].originalTitle,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 14,
                                       ),
                                     ),

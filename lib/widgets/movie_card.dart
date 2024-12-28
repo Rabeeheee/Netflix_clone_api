@@ -16,11 +16,11 @@ class MovieCardWidget extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (!snapshot.hasData || snapshot.data!.results.isEmpty) {
-              return Center(child: Text('No data available'));
+              return const Center(child: Text('No data available'));
             }
 
             var data = snapshot.data!.results;
@@ -29,16 +29,16 @@ class MovieCardWidget extends StatelessWidget {
               children: [
                 Text(
                   headLineText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Expanded(
                   child: ListView.builder(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     itemCount: data.length,
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -55,12 +55,12 @@ class MovieCardWidget extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Image.network(
-                              "${imageUrl}${data[index].posterPath}"),
+                              "$imageUrl${data[index].posterPath}"),
                         ),
                       );
                     },
@@ -69,7 +69,7 @@ class MovieCardWidget extends StatelessWidget {
               ],
             );
           } else {
-            return SizedBox.shrink();
+            return const SizedBox.shrink();
           }
         });
   }

@@ -16,7 +16,7 @@ class BottomNav extends StatelessWidget {
         bottomNavigationBar: Container(
           color: Colors.black,
           height: 70,
-          child: TabBar(tabs: [
+          child: const TabBar(tabs: [
             Tab(icon: Icon(Icons.home),
             text: 'Home',
             ),
@@ -35,7 +35,7 @@ class BottomNav extends StatelessWidget {
           unselectedLabelColor: Color(0xff999999),
           ),
         ),
-        body: TabBarView(children: [
+        body: const TabBarView(children: [
           HomeScreen(),
           SearchScreen(),
           MoreScreen(),

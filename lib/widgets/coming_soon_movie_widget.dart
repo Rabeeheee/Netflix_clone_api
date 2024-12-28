@@ -28,16 +28,16 @@ class ComingSoonMovieWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   month,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   day,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 40,
                     letterSpacing: 5,
@@ -46,7 +46,7 @@ class ComingSoonMovieWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Expanded(
@@ -64,8 +64,8 @@ class ComingSoonMovieWidget extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                     ),
                   ),
-                  Spacer(),
-                  Column(
+                  const Spacer(),
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
@@ -82,10 +82,10 @@ class ComingSoonMovieWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  Column(
+                  const Column(
                     children: [
                       Icon(
                         Icons.info_outline_rounded,
@@ -101,12 +101,12 @@ class ComingSoonMovieWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Column(
@@ -114,18 +114,18 @@ class ComingSoonMovieWidget extends StatelessWidget {
                 children: [
                   Text(
                     "Comming on $month  $day",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Text(
-                    "$overview",
+                    overview,
                     maxLines: 4,
                     textAlign: TextAlign.left,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,
                       fontSize: 12,

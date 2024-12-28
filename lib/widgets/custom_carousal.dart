@@ -23,7 +23,7 @@ class CustomCarousalSlider extends StatelessWidget {
             child: Column(
               children: [
                 Text("${data.results[index].name}"),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 CachedNetworkImage(
@@ -38,8 +38,8 @@ class CustomCarousalSlider extends StatelessWidget {
           aspectRatio: 16 / 9,
           autoPlay: true,
           reverse: false,
-          autoPlayInterval: Duration(seconds: 3),
-          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayInterval: const Duration(seconds: 3),
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
           enlargeCenterPage: true,
           scrollDirection: Axis.horizontal,
           initialPage: 0,

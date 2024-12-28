@@ -67,7 +67,7 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 IconButton(
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.arrow_back_ios_new,
                                     color: Colors.white,
                                   ),
@@ -81,7 +81,7 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Column(
@@ -89,21 +89,21 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                       children: [
                         Text(
                           movie.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 22, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Row(
                           children: [
                             Text(
                               movie.releaseDate.year.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 30,
                             ),
                             SizedBox(
@@ -112,7 +112,7 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                                 genereText,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 17,
                                 ),
@@ -120,18 +120,18 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Text(
                           movie.overview,
                           maxLines: 6,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.white, fontSize: 17),
+                          style: const TextStyle(color: Colors.white, fontSize: 17),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     FutureBuilder(
@@ -141,11 +141,11 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                             final movie = snapshot.data;
 
                             return movie!.results.isEmpty
-                                ? SizedBox()
+                                ? const SizedBox()
                                 : Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("More Like This"),
+                                      const Text("More Like This"),
                                       // SizedBox(
                                       //   height: 20,
                                       // ),
@@ -153,9 +153,9 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                                         padding: EdgeInsets.zero,
                                         itemCount: movie.results.length,
                                         shrinkWrap: true,
-                                        physics: NeverScrollableScrollPhysics(),
+                                        physics: const NeverScrollableScrollPhysics(),
                                         gridDelegate:
-                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
                                                 crossAxisCount: 3,
                                                 mainAxisSpacing: 15,
                                                 crossAxisSpacing: 5,
@@ -175,7 +175,7 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                                     },
                                           child: CachedNetworkImage(
                                               imageUrl:
-                                                  "${imageUrl}${movie.results[index].posterPath}",
+                                                  "$imageUrl${movie.results[index].posterPath}",
                                             ),
                                         );
                                         },
@@ -189,7 +189,7 @@ class _MovieDetailedScreenState extends State<MovieDetailedScreen> {
                   ],
                 );
               } else {
-                return Text("error");
+                return const Text("error");
               }
             }),
       ),

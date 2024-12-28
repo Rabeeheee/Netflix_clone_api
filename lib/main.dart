@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_clone/screens/splash_screen.dart';
 
 void main() {
-  runApp(Netflix());
+  runApp(const Netflix());
 }
 
 class Netflix extends StatelessWidget {
@@ -15,7 +15,7 @@ class Netflix extends StatelessWidget {
       title: 'Netflix',
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyLarge: TextStyle(
             color: Colors.white,
             fontSize: 24,
@@ -24,12 +24,12 @@ class Netflix extends StatelessWidget {
             fontSize: 20,)
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
-            .copyWith(background: Colors.black),
+            .copyWith(surface: Colors.black),
             fontFamily: GoogleFonts.ptSans().fontFamily,
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

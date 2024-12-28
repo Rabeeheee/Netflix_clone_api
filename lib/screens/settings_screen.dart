@@ -31,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               ListTile(
                 tileColor: Colors.grey[900],
-                leading: Icon(Icons.signal_cellular_alt, color: Colors.white),
+                leading: const Icon(Icons.signal_cellular_alt, color: Colors.white),
                 title: const Text(
                   'Mobile Data Usage',
                   style: TextStyle(color: Colors.white,fontSize: 20),
@@ -57,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               ListTile(
                 tileColor: Colors.grey[900],
-                leading: Icon(Icons.wifi, color: Colors.white),
+                leading: const Icon(Icons.wifi, color: Colors.white),
                 title: const Text(
                   'Wi-Fi Only',
                   style: TextStyle(color: Colors.white,fontSize: 20),
@@ -72,7 +72,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               ListTile(
                 tileColor: Colors.grey[900],
-                leading: Icon(Icons.download, color: Colors.white),
+                leading: const Icon(Icons.download, color: Colors.white),
                 title: const Text(
                   'Smart Downloads',
                   style: TextStyle(color: Colors.white,fontSize: 20),
@@ -88,7 +88,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               ListTile(
                 tileColor: Colors.grey[900],
-                leading: Icon(Icons.video_settings, color: Colors.white),
+                leading: const Icon(Icons.video_settings, color: Colors.white),
                 title: const Text(
                   'Video Quality',
                   style: TextStyle(color: Colors.white,fontSize: 20),
@@ -104,7 +104,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               ListTile(
                 tileColor: Colors.grey[900],
-                leading: Icon(Icons.delete, color: Colors.white,),
+                leading: const Icon(Icons.delete, color: Colors.white,),
                 title: const Text(
                   'Delete All Downloads',
                   style: TextStyle(color: Colors.white,fontSize: 20),
@@ -114,9 +114,9 @@ class SettingsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'iPhone XS',
                     style: TextStyle(color: Colors.grey),

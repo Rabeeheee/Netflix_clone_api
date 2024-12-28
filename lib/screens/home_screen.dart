@@ -48,10 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SearchScreen()),
+                  MaterialPageRoute(builder: (context) => const SearchScreen()),
                 );
               },
-              child: Icon(
+              child: const Icon(
                 Icons.search,
                 size: 30,
                 color: Colors.white,
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 25,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           )
         ],
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (snapshot.hasData) {
                     return CustomCarousalSlider(data: snapshot.data!);
                   } else {
-                    return SizedBox.shrink();
+                    return const SizedBox.shrink();
                   }
                 }),
             SizedBox(
